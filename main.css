@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Lumos;
+  src: url("./assets/fonts/Lumoslatino-XA8K.ttf");
+}
 
 body {
   background-image: url("./assets/sortinghatbackground.jpg");
@@ -7,8 +11,7 @@ body {
 #introContainer {
   width: 90vw;
   height: clamp(320px, 40vh, 520px);
-  margin: 5vh auto 3vh;
-  border: solid red 1px;
+  margin: 7vh auto 3vh;
 }
 
 #cardContainer {
@@ -18,8 +21,17 @@ body {
   border: solid black 1px;
 }
 
-#introCard {
-  border: solid 1px red;
+#introCard h1 {
+  font-size: 300%;
+  font-family: Lumos;
   text-align: center;
-  color: brown;
+  color: beige;
+  text-shadow: 0px 0px 10px rgb(128, 128, 111);
+}
+
+#introCard p {
+  color: rgb(219, 219, 198);
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 0px 0px 10px rgb(128, 128, 111);
 }
