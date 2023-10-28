@@ -1,3 +1,25 @@
+
 body {
-  background-color: rgb(144, 214, 123);
+  background-image: url("./assets/sortinghatbackground.jpg");
+  object-fit: cover;
+}
+
+#introContainer {
+  width: 90vw;
+  height: clamp(320px, 40vh, 520px);
+  margin: 5vh auto 3vh;
+  border: solid red 1px;
+}
+
+#cardContainer {
+  width: 90vw;
+  height: clamp(360px, 50vh, 700px);
+  margin: 2vh auto 0;
+  border: solid black 1px;
+}
+
+#introCard {
+  border: solid 1px red;
+  text-align: center;
+  color: brown;
 }
