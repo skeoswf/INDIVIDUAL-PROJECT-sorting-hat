@@ -1,7 +1,9 @@
-@font-face {
+ @font-face {
   font-family: Lumos;
   src: url("./assets/fonts/Lumoslatino-XA8K.ttf");
-}
+ }
+
+
 
 body {
   background-image: url("./assets/sortinghatbackground.jpg");
@@ -25,7 +27,7 @@ body {
 
 #introCard h1 {
   font-size: 300%;
-  font-family: Lumos;
+  font-family: ass;
   text-align: center;
   color: beige;
   text-shadow: 0px 0px 10px rgb(128, 128, 111);
@@ -53,7 +55,7 @@ body {
   color: rgb(68, 68, 60);
   font-family: Lumos;
   font-weight: bold;
-  border-radius: 15px 0px;
+  border-radius: 15pxx;
   box-shadow: 0px 0px 5px beige;
   opacity: 90%;
 
@@ -81,11 +83,85 @@ body {
 }
 
 #submitButton:focus {
-  box-shadow: rgb(245, 209, 87);
-  
+  box-shadow: rgb(245, 209, 87);  
 }
 
 #submitButton:hover {
   box-shadow: 0px 0px 90px rgb(245, 209, 87);
+}
+
+#filterContainer {
+  display: flex; 
+  justify-content: space-around;
+  margin-top: 10vh;
+}
+
+.filterButtons {
+  width: 7vw;
+  opacity: 85%;
+  height: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  border-style: none;
+
+  transition: all ease 0.4s;
+}
+
+.filterButtons:hover{
+  text-shadow: 0px 0px 15px rgb(245, 209, 87);
+  background-color: beige;
+}
+
+#allFilter {
+  border-radius: 10px;
+  outline: none;
   
+  transition: all ease 0.4s;
+}
+
+#allFilter:hover {
+  box-shadow: 0px 15px rgb(32, 32, 29);
+  opacity: 90%;
+  color: black;
+}
+
+#allWrapper {
+  margin-top: 35px;
+}
+
+#gryffindorFilter, #slytherinFilter {
+  border-radius: 15px 0px 15px 0px;
+  outline: none;
+}
+
+#gryffindorFilter:hover {
+  color: red;
+  background-color: gold;
+  box-shadow: 10px 10px 0px red;
+  opacity: 90%;
+}
+
+#slytherinFilter:hover {
+  color: green;
+  background-color: rgb(217, 218, 219);
+  box-shadow: 10px 10px 0px green;
+  opacity: 90%;
+}
+
+#ravenclawFilter, #hufflepuffFilter {
+  border-radius: 0px 15px 0px 15px;
+  outline: none;
+}
+
+#ravenclawFilter:hover {
+  color: blue;
+  background-color: rgb(205, 127, 50);
+  box-shadow: -10px 10px 0px blue;
+  opacity: 90%;
+}
+
+#hufflepuffFilter:hover {
+  color: yellow;
+  background-color: black;
+  box-shadow: -10px 10px 0px yellow;
+  opacity: 90%;
 }
