@@ -119,7 +119,8 @@ body {
 #filterContainer {
   display: flex; 
   justify-content: space-around;
-  margin-top: 10vh;
+  margin-top: 2.5vh;
+  border: 1px solid white;
 }
 
 .filterButtons {
