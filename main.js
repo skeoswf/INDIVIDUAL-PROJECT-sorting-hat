@@ -15,28 +15,49 @@ const houseSorterFunction = () => {
     return house;
   }
 
-const studentCards = [
+const students = [
   {
     id: 1,
     name: "henry pousseur",
-    house: houseSorterFunction()
+    house: "bubble"
   },
   {
     id: 2,
     name: "henry pousseur",
-    house: houseSorterFunction()
+    house: "besties"
   }
 ] 
 
 const studentCardsWrapper = document.querySelector("#studentCards");
 const userForm = document.querySelector("#addUserForm");
-const submitButton = document.querySelector("#submitButton");
+const submitButton = docume
++nt.querySelector("#submitButton");
 
 
 
-submitButton.addEventListener("click", () => {
+submitButton.addEventListener("submit", (e) => {
+  e.preventDefault();
     userForm.reset();
   })
 
-  console.log(studentCards[0].house);
-  console.log(studentCards[1].house);
+  let studentCard = "";
+
+  const renderToDom = (array) => {
+
+    let studentCard = "";
+    for (let i = 0; i < students.length; i++) {
+
+      studentCard += 
+      `<div class="hogwartsStudent>
+        <h1>${students[i].name}</h1>
+        </div>`
+    }
+
+    studentCardsWrapper.innerHTML = studentCard;
+  }
+
+  renderToDom(students);
+
+
+  console.log(students[0].house);
+  console.log(students[1].house);
