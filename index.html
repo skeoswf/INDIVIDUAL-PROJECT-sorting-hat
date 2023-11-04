@@ -23,9 +23,9 @@
 
         <form id="addUserForm">
           <div class="mb-3">
-            <input type="text" class="form-control" id="submitField" placeholder="a namesake" autocomplete="off">
+            <input type="text" class="form-control" id="submitField" placeholder="a namesake" autocomplete="off" oninvalid="this.setCustomValidity(`a name must be uttered!`)" oninput="setCustomValidity('')" required/>
           </div>
-                    <button type="submit" class="btn btn-primary" id="submitButton">your house awaits...</button>
+            <button type="submit" class="btn btn-primary" id="submitButton">your house awaits...</button>
         </form>
 
         <div id="filterContainer">
@@ -37,19 +37,22 @@
           <button class="filterButtons" id="hufflepuffFilter">hufflepuff</button>
         </div>
 
+    <div id="titles">
+      <h1 id="title1">student records</h1>
+      <h1 id="title2">expelled students</h1>
     </div>
 
     <div id="cardContainer">
       <div id="studentCards">
-        <h1>records of student's houses</h1>
         <div id="studentCardsWrapper"></div>
       </div>
+
+
       <div id="theVoldiesCards">
-        <h1>expelled students</h1>
-        <div id="theVoldiesCardsWrapper">
-        </div>
+        <div id="theVoldiesCardsWrapper"></div>
       </div>
-    </div>
+
+    
 
 
 
@@ -62,6 +65,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="./main.js"></script>
+  
 
   </body>
 </html>
