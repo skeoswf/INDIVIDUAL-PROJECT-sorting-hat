@@ -18,8 +18,8 @@ body {
 }
 
 #titles {
-  margin-top: 40px;
-  margin-bottom: -10vh;
+  margin-top: 130px;
+  margin-bottom: -180px;
   display: flex;
   justify-content: space-around;
   font-family: Lumos;
@@ -44,7 +44,6 @@ body {
   width: 90vw;
   height: clamp(360px, 50vh, 700px);
   margin: 3vh auto 0;
-  border: solid rgb(255, 255, 255) 1px;
 }
 
 
@@ -54,13 +53,13 @@ body {
 }
 
 #studentCards, #theVoldiesCards {
+  margin-top: 100px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   width: 45%;
   height: 90%;
-  border: 1px solid red;
 }
 
 #introCard h1 {
