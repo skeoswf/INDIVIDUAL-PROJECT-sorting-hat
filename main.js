@@ -1,3 +1,5 @@
+
+
 const houseSorterFunction = () => {
   let house = "";
   let houseNumber = Math.floor(Math.random() * 4);
@@ -195,6 +197,8 @@ const deleteStudent = (event) => {
   }
 }
 
+// works fine if deleting starting at the end of array; will have to inspect line 192 to restructure
+
 gryffindorFilterButton.addEventListener("click", filterGryffindor)
 slytherinFilterButton.addEventListener("click", filterSlytherin)
 allFilterButton.addEventListener("click", filterAll)
@@ -202,6 +206,13 @@ ravenclawFilterButton.addEventListener("click", filterRavenclaw)
 hufflepuffFilterButton.addEventListener("click", filterHufflepuff)
 
 studentCardsWrapper.addEventListener("click", deleteStudent);
+
+// document.getElementById("#submitField").noValidate = "false";
+
+// this allows for onValid and onInput to work with the required tag on html
+// does NOT allow for the user to input a new student; other functionality still operational 
+// noValidate was unnecessary on the pet form for some reason. placing noValidate at the end  or beginning of the document destroys functionality. 
+// might be because of bootstrap or e.Default
 
   submitButton.addEventListener("click", (e) => {
     e.preventDefault();
