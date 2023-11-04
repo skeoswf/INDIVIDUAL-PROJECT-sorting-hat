@@ -7,7 +7,7 @@ const houseSorterFunction = () => {
   } else if (houseNumber === 1) {
     house = "slytherin";
   } else if (houseNumber === 2) {
-    house = "ravenclaw";
+    house = "rawenclav";
   } else if (houseNumber === 3) {
     house = "hufflepuff"
   }
@@ -15,49 +15,204 @@ const houseSorterFunction = () => {
     return house;
   }
 
+
 const students = [
   {
     id: 1,
     name: "henry pousseur",
-    house: "bubble"
+    house: "slytherin",
   },
   {
     id: 2,
-    name: "henry pousseur",
-    house: "besties"
-  }
+    name: "habitat gangster",
+    house: "hufflepuff"
+  },
+  {
+    id: 3,
+    name: "pond easily",
+    house: "gryffindor"
+  },
+  {
+    id: 4,
+    name: "dracula maestro",
+    house: houseSorterFunction()
+  },
 ] 
 
-const studentCardsWrapper = document.querySelector("#studentCards");
+const voldyGang = [
+  {
+  id: 1,
+  name: "luscious macro"
+  },
+  {
+  id: 2,
+  name: "king moldevort"
+  }
+]
+
+const studentCardsWrapper = document.querySelector("#studentCardsWrapper");
+const voldyGangWrapper = document.querySelector("#theVoldiesCardsWrapper");
+
 const userForm = document.querySelector("#addUserForm");
-const submitButton = docume
-+nt.querySelector("#submitButton");
+const submitButton = document.querySelector("#submitButton");
 
+const gryffindorFilterButton = document.querySelector("#gryffindorFilter");
+const slytherinFilterButton = document.querySelector("#slytherinFilter");
+const allFilterButton = document.querySelector("#allFilter");
+const ravenclawFilterButton = document.querySelector("#ravenclawFilter");
+const hufflepuffFilterButton = document.querySelector("#hufflepuffFilter");
 
+let studentCardWrapperContent = "";
+let voldyCardWrapperContent = "";
 
-submitButton.addEventListener("submit", (e) => {
-  e.preventDefault();
-    userForm.reset();
-  })
+const renderStudents = (array) = () => {
+  
+  let studentCardWrapperContent = "";
+  for (let i = 0; i < students.length; i++) {
 
-  let studentCard = "";
+    studentCardWrapperContent +=
+    `<div class="hogwartsStudents">
+    <h2>${students[i].name}</h2>
+    <h5>${students[i].house}</h5>
 
-  const renderToDom = (array) => {
-
-    let studentCard = "";
-    for (let i = 0; i < students.length; i++) {
-
-      studentCard += 
-      `<div class="hogwartsStudent>
-        <h1>${students[i].name}</h1>
-        </div>`
-    }
-
-    studentCardsWrapper.innerHTML = studentCard;
+    <button class="delete" id="delete--${students[i].id}">expel</button>
+  </div>`;
   }
 
-  renderToDom(students);
+  studentCardsWrapper.innerHTML = studentCardWrapperContent
 
+}
 
-  console.log(students[0].house);
-  console.log(students[1].house);
+const renderVoldy = (array) = () => {
+  
+  let voldyCardWrapperContent = "";
+  for (let i = 0; i < voldyGang.length; i++) {
+
+    voldyCardWrapperContent +=
+    `<div class="voldyGang">
+    <h2>${voldyGang[i].name}</h2>
+  </div>`;
+  }
+
+  voldyGangWrapper.innerHTML = voldyCardWrapperContent
+
+}
+
+renderStudents(students);
+renderVoldy(voldyGang);
+
+const filterGryffindor = () => {
+  
+  let studentCardWrapperContent = "";
+
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].house === "gryffindor")
+    studentCardWrapperContent +=
+    `<div class="hogwartsStudents">
+    <h2>${students[i].name}</h2>
+    <h5>${students[i].house}</h5>
+
+    <button class="delete" id="delete--${students[i].id}">expel</button>
+  </div>`;
+  }
+
+  studentCardsWrapper.innerHTML = studentCardWrapperContent
+
+}
+
+const filterSlytherin = () => {
+  
+  let studentCardWrapperContent = "";
+
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].house === "slytherin")
+    studentCardWrapperContent +=
+    `<div class="hogwartsStudents">
+    <h2>${students[i].name}</h2>
+    <h5>${students[i].house}</h5>
+
+    <button class="delete" id="delete--${students[i].id}">expel</button>
+  </div>`;
+  }
+
+  studentCardsWrapper.innerHTML = studentCardWrapperContent
+
+}
+
+const filterRavenclaw = () => {
+  
+  let studentCardWrapperContent = "";
+
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].house === "ravenclaw")
+    studentCardWrapperContent +=
+    `<div class="hogwartsStudents">
+    <h2>${students[i].name}</h2>
+    <h5>${students[i].house}</h5>
+
+    <button class="delete" id="delete--${students[i].id}">expel</button>
+  </div>`;
+  }
+
+  studentCardsWrapper.innerHTML = studentCardWrapperContent
+
+}
+
+const filterHufflepuff = () => {
+  
+  let studentCardWrapperContent = "";
+
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].house === "hufflepuff")
+    studentCardWrapperContent +=
+    `<div class="hogwartsStudents">
+    <h2>${students[i].name}</h2>
+    <h5>${students[i].house}</h5>
+
+    <button class="delete" id="delete--${students[i].id}">expel</button>
+  </div>`;
+  }
+
+  studentCardsWrapper.innerHTML = studentCardWrapperContent
+
+}
+
+const filterAll = () => {
+
+  studentCardWrapperContent = ""
+  renderStudents(students)
+}
+
+const deleteStudent = (event) => {
+  if(event.target.id.includes("delete")) {
+    const [, id] = event.target.id.split("--");
+    const index = students.findIndex(obj => obj.id === Number(id));
+    voldyGang.push(students[id - 1]);
+    students.splice(index, 1);
+    
+    renderStudents(students);
+    renderVoldy(voldyGang);
+  }
+}
+
+gryffindorFilterButton.addEventListener("click", filterGryffindor)
+slytherinFilterButton.addEventListener("click", filterSlytherin)
+allFilterButton.addEventListener("click", filterAll)
+ravenclawFilterButton.addEventListener("click", filterRavenclaw)
+hufflepuffFilterButton.addEventListener("click", filterHufflepuff)
+
+studentCardsWrapper.addEventListener("click", deleteStudent);
+
+  submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const newStudent = {
+      id: students.length + 1,
+      name: document.querySelector("#submitField").value,
+      house: houseSorterFunction(),
+    }
+
+      students.push(newStudent);
+      renderStudents(students);
+      userForm.reset();
+    })
