@@ -119,10 +119,6 @@ body {
   transition: all ease 0.6s;
 }
 
-#submitButton:focus {
-  box-shadow: rgb(245, 209, 87);  
-}
-
 #submitButton:hover {
   box-shadow: 0px 0px 90px rgb(245, 209, 87);
 }
